@@ -1,0 +1,114 @@
+body{
+    background:linear-gradient(180deg,#C1E1FF 0%,#0085FF 100%) ;
+    /* 最小高度是一整個螢幕 */
+    min-height: 100vh;
+    font-family: 'Roboto',sans-serif;
+}
+
+.container{
+    background-color: white;
+    width: 400px;
+    margin:100px auto;
+    padding:10px 100px;
+    border-radius: 30px;
+}
+.todo-list-title{
+    position: relative;
+    left:-20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+.inner-wrapper{
+    margin:0 auto;
+    max-width: 350px;
+    width:100%;
+}
+.input-wrapper{
+    border-radius: 20px;
+    background:#EEEFF0;
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 424px;
+}
+.input-wrapper input{
+   background-color: transparent;
+    border:0px;
+    /* 占據整個空間 */
+    flex:1;
+    outline:none;
+    padding:10px 20px;
+}
+.input-wrapper button{
+    background-color: #359AFF;
+    border:0px;
+    color:white;
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+    padding:10px 13px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.list{
+    list-style:none;
+    /* 原本靠左 */
+    padding: 0px;
+}
+
+.list li{
+    /* 自對齊上下靠齊置中，前面還要放icon */
+    vertical-align: middle;
+    font-weight: 400;
+    padding: 5px;
+    position: relative;
+}
+
+.list li.checked{
+    /* icon被勾起來後面自會被劃掉 */
+    text-decoration: line-through;
+
+}
+
+.list li::before{
+    content:'';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image:url('assets/space.svg');
+    /* 若沒有出現要用這個調整大小 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    vertical-align: middle;
+    /* 微調圖片位置 */
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+/* 如果打勾的話 */
+.list li.checked::before{
+    background-image: url('assets/finish.svg');
+}
+
+/* 右邊要做一個獨立的叉叉按鈕 */
+.delete{
+    background-image:url('assets/delete.svg') ;
+    border-radius: 25px;
+    padding:5px;
+    background-position: center;
+    /* 確定圖片顯示 */
+    background-size: contain;
+    object-fit: cover;
+    position: absolute;
+    background-repeat: no-repeat;
+    right:0;
+    top:0;
+    width:15px;
+    height: 15px;
+}
+.delete:hover{
+    background-color: #EEEFF0;
+    cursor: pointer;
+}
